@@ -29,7 +29,7 @@ class ScreenApp(App):
     flavor = Text("Edit a merge conflict to get started! ", style="white")
     flavor.append("\U000015E3 ", style="#1C6FFF")
     comment_content = reactive(flavor)
-# 
+
     def __init__(self, openai_api_key=None):
         # Backend initialization
         super().__init__()
@@ -60,8 +60,7 @@ class ScreenApp(App):
         )
         self.code.register_theme(my_theme)
         self.code.theme = "pacs"
-        # self.comment = Static("", id="comment-view", classes="grid")
-        self.comment = TextArea("", id="comment-view", read_only=True, classes="grid")
+        self.comment = TextArea.code_editor("", read_only=True, classes="grid", theme="dracula")
         self.popup = Static("This is a temporary pop-up!", id="popup", classes="popup")
 
         yield self.widget
