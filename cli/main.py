@@ -29,7 +29,7 @@ class ScreenApp(App):
     flavor = Text("Edit a merge conflict to get started! ", style="white")
     flavor.append("\U000015E3 ", style="#1C6FFF")
     comment_content = reactive(flavor)
-# 
+
     def __init__(self, openai_api_key=None):
         # Backend initialization
         super().__init__()
@@ -60,12 +60,13 @@ class ScreenApp(App):
         )
         self.code.register_theme(my_theme)
         self.code.theme = "pacs"
-        self.comment = Static("", id="comment-view", classes="grid")
+        self.comment = TextArea.code_editor("", read_only=True, classes="grid", theme="dracula")
         self.popup = Static("This is a temporary pop-up!", id="popup", classes="popup")
 
         yield self.widget
         yield self.files
-        yield ScrollableContainer((self.code))
+        # yield ScrollableContainer((self.code))
+        yield self.code
         yield self.comment
         yield self.popup
         with Horizontal(id="button-container"):
@@ -152,9 +153,14 @@ class ScreenApp(App):
         if path == self.path:
             self.comment_content += "\n\n" + "\n\n".join(answers)
 
-    def watch_comment_content(self, old_comment: str, new_comment: str) -> None:  
+    # def watch_comment_content(self, old_comment: str, new_comment: str) -> None:  
+    #     print("Hello")
+    #     self.comment.update(new_comment)
+
+    def watch_comment_content(self, old_comment: str, new_comment: str) -> None:
         print("Hello")
-        self.comment.update(new_comment)
+        self.comment.text = str(new_comment)  # Set the new text
+        self.comment.refresh()  # Refresh to ensure the UI updates
 
     async def on_directory_tree_file_selected(self, event: DirectoryTree.FileSelected) -> None:
         """Display selected file content and detect conflicts."""
