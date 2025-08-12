@@ -1,8 +1,6 @@
 # Merge 🍒
 
-Merge is an interactive, command line interface application designed to simplify and accelerate Git merge conflict resolution. It provides a visual interface for navigating through conflicting files and offers several options for handling conflicts: accepting the current version, incoming changes, or both.
-
-Merge integrates conflict detection, resolution, and staged merging into a unified and easy-to-use experience. This changes the developer experience for beginners who often struggle with understanding merge conflicts.
+Merge is an interactive command line interface application designed to simplify and accelerate Git merge conflict resolution. It provides a visual interface for reviewing conflicting files and offers streamlined keyboard navigation for handling conflicts. By integrating conflict detection, resolution, and staged merging into a unified and easy-to-use experience, Merge changes the developer experience for beginners who often struggle with understanding merge conflicts.
 
 ---
 
@@ -12,8 +10,7 @@ Merge integrates conflict detection, resolution, and staged merging into a unifi
 - **⚙️ Multiple Resolution Options**: Allows you to resolve conflicts by accepting the current changes, incoming changes, a combination of both, or AI-suggested resolutions.
 - **🤖 AI-Powered Suggestions**: Integration with OpenAI provides suggestions based on context, assisting in complex conflict resolution.
 - **💻 Keyboard Bindings**: Streamlined keyboard navigation and shortcuts enable rapid conflict resolution.
-- **🤩 Visual Conflict Indicators**: A user-friendly, color-coded display that helps users visually track the sections of code in conflict.
-- **🛎️ Temporary Alerts**: Briefly displays pop-up notifications to guide and inform you during the resolution process.
+- **🤩 Visual Conflict Indicators**: A user-friendly, color-coded display helps users visually track the sections of code in conflict.
 
 ---
 
